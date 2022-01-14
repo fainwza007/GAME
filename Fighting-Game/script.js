@@ -50,7 +50,12 @@ function mute(){
 
 function startgame() {
     if(n==1){
-     musiccontrol.innerHTML = "<img src='image/unmute.png' onclick='mute();' class='music-icon'>"
+      if (music_status == "on") {
+            musiccontrol.innerHTML = "<img src='image/unmute.png' onclick='mute();' class='music-icon'>"
+        }
+        else{
+            musiccontrol.innerHTML = "<img src='image/mute.png' onclick='mute();' class='music-icon'>"
+        }
     }
     if(music_status == "on"){
         battlemusic.volume=0.1;
